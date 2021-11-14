@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            //on메소드의 사용법
+            //1- $("button").on("mouseenter mouseleave", function(){});
+            //2- $("button").on({mouseenter: function(){}, mouseleave : function(){}});
+
+            //mouseenter mouseleave는 마우스가 클릭 없이 왔다가 떠났다를 의미함
+
+            /*
+            $("button").on({
+                mouseenter: function(){
+                    $("#text").append("마우스가 버튼 위로 올라감<br>");
+                },
+                click: function(){
+                    $("#text").append("마우스가 버튼을 클릭함<br>");
+                },
+                mouseleave: function(){
+                    $("#text").append("마우스가 버튼을 떠남<br>");
+                }
+            });
+            */
+            $("button").on("mouseenter mouseleave", function(){
+                $("#text").append("마우스가 버튼 위로 올라갔거나 나갔음<br>");
+            });
+
+        });
+        //괄호와 중괄호에 주의! on다음에 바로 중괄호로 엮어줌
+    </script>
+</head>
+<body>
+    <button>마우스를 버튼 위로 그리고 밖으로 그리고 클릭</button>
+    <p id="text"></p>
+</body>
+</html>

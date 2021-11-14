@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        //토글 선택한 요소의 현재 표시 상태에 따라 다른 동작을 수행
+        
+        $(function(){
+            $("#toggleBtn").on("click", function(){
+                $("#text").toggle("fast");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1 id="text">Hello World</h1>
+    <button id="toggleBtn">토글 표시</button>
+</body>
+</html>

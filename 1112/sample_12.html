@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 my ver</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+        #memInfo, #personInfo{
+            color: white; background-color: black; font-size: 20px; font-weight: bold;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#rightjumin").focusout(function(){
+                var genderNum = $("#rightjumin").val().substring(0,1);
+                var year = $("#leftjumin").val().substring(0,2);
+                var zeroConfirm = $("#leftjumin").val().substring(2,3);
+                var zeroConfirm2 = $("#leftjumin").val().substring(4,5);
+                if(genderNum == 1 || genderNum == 2 )
+                {
+                    $("#year").val("19"+year);
+                }else
+                {
+                    $("#year").val("20"+year);
+                }
+                if(zeroConfirm == 0)
+                {
+                    $("#month").val($("#leftjumin").val().substring(3,4));
+                }else{
+                    $("#month").val($("#leftjumin").val().substring(2,4));
+                }
+                if(zeroConfirm2 == 0)
+                {
+                    $("#day").val($("#leftjumin").val().substring(5,6));
+                }else{
+                    $("#day").val($("#leftjumin").val().substring(4,6));
+                }
+
+
+            });
+        });
+
+        function isEmail(asValue)
+        {
+            var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            return regExp.test(asValue);
+        }
+
+            //주민번호 확인 
+        function jmcheck(){
+                var ffjm = document.form1.leftjumin.value + document.form1.rightjumin.value;
+                if(comp(ffjm)==true){
+                    return true;
+                }else{
+                    return false;
+                }
+                
+        }
+        function comp(jumincomp){
+                
+                var jumintotal = 0;
+                var juminadd = "234567892345"/*12자리까지 곱해야됨. i가 0부터 시작*/
+                for (var i = 0; i < 12; i++) {
+                    jumintotal= jumintotal+ parseInt(jumincomp.substring(i,i+1)) * parseInt(juminadd.substring(i,i+1));
+                };
+                jumintotal= 11-(jumintotal%11);
+                if(jumintotal==11){jumintotal=1;}
+                else if(jumintotal==10){jumintotal=0;}
+                if(jumintotal==parseInt(jumincomp.substring(12,13))) return true;
+        }
+
+        function validate(){
+            //아이디 정규표현식
+            var idPattern = /^[a-zA-Z0-9]{4,12}$/;
+            //비밀번호 정규표현식
+            var pwdPattern = /^[a-zA-Z0-9]{4,12}$/;
+            //이름 패턴 한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가) – 최소3글자 이상: 얘는 length로 할거임
+            var namePattern = /^[가-힣]*$/;
+            //이메일 패턴
+            var emailPattern = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            
+            var idResult = idPattern.test($("#userId").val());
+            var pwdResult = pwdPattern.test($("#pwd1").val());
+            var emailResult = emailPattern.test($("#email").val());
+            var nameResult = namePattern.test($("#name").val());
+
+            
+            //아이디 체크
+            
+            if($("#userId").val().trim() == "")
+            {
+                alert("아이디를 입력해주세요.");
+                $("userId").focus();
+                return false;
+            }
+
+            if(!idResult){
+                alert("아이디는 4~12자리의 영문 대소문자와 숫자로만 입력할 수 있습니다.");
+                $("#userId").val("");
+                $("#userId").focus();
+                return false;
+            }
+
+
+            //비밀번호 체크
+            
+            if($("#pwd1").val().trim() == "")
+            {
+                alert("비밀번호를 입력해주세요");
+                $("pwd1").focus();
+                return false;
+            }
+            //비밀번호는 아이디와 같으면 안됨
+            if($.trim($("#userId").val()) == $.trim($("#pwd1").val()) )
+            {
+                alert("비밀번호는 아이디와 같을 수 없습니다.");
+                $("#pwd1").val("");
+                $("pwd1").focus();
+                return false;
+            }
+
+            if(!pwdResult)
+            {
+                alert("비밀번호는 4~12자리의 영문 대소문자와 숫자로만 입력할 수 있습니다.");
+                $("#pwd1").val("");
+                $("pwd1").focus();
+                return false;
+            }
+
+            //비밀번호 확인 체크
+            
+            if($("#pwd2").val().trim() == "")
+            {
+                alert("비밀번호 확인을 입력해주세요");
+                $("pwd2").focus();
+                return false;
+            }
+            if($("#pwd1").val() != $("#pwd2").val())
+            {
+                alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                $("#pwd2").val("");
+                $("pwd2").focus();
+                return false;
+            }
+
+            //이메일 체크
+            
+            if($("#email").val().trim() == "")
+            {
+                alert("이메일을 입력해주세요.");
+                $("email").focus();
+                return false;
+            }
+            if(!emailResult)
+            {
+                alert("이메일을 정확하게 입력해주세요.");
+                $("#email").val("");
+                $("#email").focus();
+                return false;
+            }
+
+            //이름 체크
+            
+            if($("#name").val().trim() == "")
+            {
+                alert("이름을 입력해주세요.");
+                $("name").focus();
+                return false;
+            }
+            if($("#name").val().length <2)
+            {
+                alert("이름은 2글자 이상 입력하셔야 합니다.");
+                document.form1.name.value = "";
+                $("name").focus();
+                return false;
+            }
+            if(!nameResult)
+            {
+                alert("이름은 한글로만 입력해주세요.");
+                $("#name").val("");
+                $("#name").focus();
+                return false;
+            }
+
+            //주민번호 체크
+            if(!jmcheck())
+            {
+                alert("주민번호가 정확하지 않습니다.");
+                document.form1.leftjumin.focus();
+                return false;
+            }
+
+            //체크박스 최소 1개이상 체크했는지 여부 확인
+            var num = $("input:checkbox[name=intres]:checked").length;
+            if(num < 1)
+            {
+                alert("관심분야를 입력해주세요.");
+                return false;
+            }
+
+            if(confirm("회원가입하시겠습니까?"))
+            {
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <table style="width: 200;" align="center" border="3" cellspacing="0">
+        <legend align="center"><h1>회원가입</h1></legend>
+        <form name="form1" action="sample_11.html" method="post" onsubmit="return validate()">
+            <tr>
+                <th colspan="5" id="memInfo">회원기본정보</th>
+            </tr>
+            <tr>
+                <td width="100">아이디:</td>
+                <td colspan="4">
+                    <input type="text" maxlength="12" placeholder="아이디 입력란" id="userId" name="userId"> 4~12자리의 영문 대소문자와 숫자로만 입력
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">비밀번호:</td>
+                <td colspan="4">
+                    <input type="password" maxlength="12" placeholder="비밀번호 입력란" id="pwd1" name="pwd1"> 4~12자리의 영문 대소문자와 숫자로만 입력
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">비밀번호확인:</td>
+                <td colspan="4">
+                    <input type="password" maxlength="12" placeholder="비밀번호 확인 입력란" id="pwd2" name="pwd2">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">메일주소:</td>
+                <td colspan="4">
+                    <input type="text" placeholder="이메일 입력란" id="email" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">이름:</td>
+                <td colspan="4">
+                    <input type="text" maxlength="6" placeholder="이름 입력란" id="name" name="name">
+                </td>
+            </tr>
+
+            <tr>
+                <th id="personInfo" colspan="5">개인신상정보</th>
+            </tr>
+
+            <tr>
+                <td width="100">주민등록번호</td>
+                <td colspan="4">
+                    <input type="text" maxlength="6" id="leftjumin" name="leftjumin">- 
+                    <input type="password" maxlength="7" id="rightjumin" name="rightjumin"> 예)123456789
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="100">생일:</td>
+                <td colspan="4">
+                    <input type="text" readonly disabled id="year" name="year" size="5">년 <input type="text" readonly disabled id="month" name="month" size="5">월<input type="text" readonly disabled id="day" name="day" size="5">일
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">관심분야:</td>
+                <td colspan="4">
+                    <label><input type="checkbox" name="intres" value="컴퓨터">컴퓨터</label>
+                    <label><input type="checkbox" name="intres" value="컴퓨터">인터넷</label>
+                    <label><input type="checkbox" name="intres" value="컴퓨터">여행</label>
+                    <label><input type="checkbox" name="intres" value="컴퓨터">영화감상</label>
+                    <label><input type="checkbox" name="intres" value="컴퓨터">음악감상</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td width="100">자기소개:</td>
+                <td colspan="4">
+                    <textarea name="intro" id="intro" cols="70" rows="5"></textarea>
+                </td>
+            </tr>
+        
+    </table>
+    <br>
+    <div align="center">
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+    </div>
+</form>
+</body>
+</html>

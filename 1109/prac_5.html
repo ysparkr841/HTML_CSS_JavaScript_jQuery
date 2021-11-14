@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../../img/11.jpg" alt="img" id="img" width="200" height="200">
+    <button type="button" onclick="changeImg()">변경</button>
+
+    <script>
+        var num = 0;
+        function changeImg()
+        {
+            if(num == 0)
+            {
+                document.getElementById("img").src = "../../img/22.jpg";
+                num = 1;
+            }else
+            {
+                document.getElementById("img").src = "../../img/11.jpg";
+                num = 0;
+            }
+        }
+    </script>
+</body>
+</html>

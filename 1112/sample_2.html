@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+        .disable{
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+    </style>
+    <script>
+        $(function(){
+            //one 메소드- 연결된 이벤트 핸들러가 한번 실행 후 다시 실행되지 않음
+            //on메소드랑 같은 인자를 받고, 같은 형식임.
+            $("button").one("click", function(){
+                $("#text").append("버튼을 클릭했음<br>");
+                $(this).addClass("disable"); //this가 받는 것은 당연히 상위 요소인 $("button")임, $("#text")는 형제 요소임.
+            });
+        });
+    </script>
+</head>
+<body>
+    <button style="font-size: 30px;">버튼</button>
+    <p id="text"></p>
+</body>
+</html>

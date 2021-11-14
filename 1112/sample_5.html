@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        //mouseenter+mouseleave => hover()라고 생각하면 됨.
+        $(function(){
+            $("button").hover(function(){
+                $("#text").append("마우스가 버튼 위에 올라갔거나 나갔습니다.<br>");
+            });
+
+            /*
+            $("button").on("mouseenter mouseleave", function(){
+                $("#text").append("마우스가 버튼 위에 올라갔거나 나갔습니다.<br>");
+            });
+            위에꺼랑 지금 이 주석 부분이랑 같은 기능을 함.
+            */
+        });
+    </script>
+</head>
+<body>
+    <button>버튼 위로 이동 혹은 나갔을 때</button>
+    <p id="text"></p>
+</body>
+</html>
