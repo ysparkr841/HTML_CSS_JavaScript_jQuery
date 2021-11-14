@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //자바 스크립트에서는 함수의 매개변수를 다르게 보내도
+        //오류가 발생하지 않음. 함수에는 3개가 있는데
+        //2개만 보내도 나머지는 자동으로 undefined로 됨.
+
+        function addNum(x,y,z)
+        {
+            return x+y+z;
+        }
+        document.write("addNum(1,2,3) : "+addNum(1,2,3)+"<br>");
+        document.write("addNum(1,2) : "+addNum(1,2)+"<br>");
+        document.write("addNum(1) : "+addNum(1)+"<br>");
+        document.write("addNum() : "+addNum());
+        // 처음꺼 빼고 계산될 수 없다는 의미인 NaN이 나옴.
+
+        //그럼 위의 부분을 어떻게 처리하는가?
+
+        function addNum2(x,y,z)
+        {
+            if(x === undefined)
+            {
+                x = 0;
+            }
+            if(y === undefined)
+            {
+                y = 0;
+            }
+            if(z === undefined)
+            {
+                z = 0;
+            }
+            return x+y+z;
+        }
+        //위에서 else if로 해버리면 x값이 없을 때 뒤의 부분은 실행되지 않아서
+        //NaN이 반환되게 됨. 그러니까 반드시 if 세개를 해야됨.
+        document.write("addNum2(1,2,3) : "+addNum2(1,2,3)+"<br>");
+        document.write("addNum2(1,2) : "+addNum2(1,2)+"<br>");
+        document.write("addNum2(1) : "+addNum2(1)+"<br>");
+        document.write("addNum2() : "+addNum2());
+
+        document.write("<br><br><br>");
+
+        //함수로 정의한 인수보다 더 많이 보내면??
+        //Argument 객체 사용해서 인수 자체를 안받고
+        //보낸 인수에 맞춰서 자동으로 추가하게 만들어버릴 수 있음.
+
+        function addNum3()
+        {
+            var sum = 0;    //합을 지정할 변수 sum 선언
+            for(var i = 0; i<arguments.length;i++)
+            {   //전달받은 인수의 총 수만큼 반복함
+                sum += arguments[i];//전달받은 인수를 sum에 각각 더함.
+            }
+            return sum;
+        }
+
+        document.write("addNum3(1,2,3) : "+addNum3(1,2,3)+"<br>");
+        document.write("addNum3(1,2) : "+addNum3(1,2)+"<br>");
+        document.write("addNum3(1) : "+addNum3(1)+"<br>");
+        document.write("addNum3() : "+addNum3()+"<br>");
+
+        //아래도 됨,
+        document.write("addNum3(2,3,4,5,6,7,8,9,11,12,14,15,16,18,22) : "+addNum3(2,3,4,5,6,7,8,9,11,12,14,15,16,18,22)+"<br>");
+        //그런데 검색해보니 arguments 가변인자는 유사배열이지 배열이 아님.
+        //arguments의 인덱스와 length를 가지고 있지만 배열처럼 사용은 불가
+        //그래서 위처럼 사용하는 것 보다는 spread를 사용하는 것이 좋음
+        //...을 붙이면 사용할 수 있음.
+        document.write("<br><br><br>");
+        
+        function addNum4(...args)
+        {
+            sum = 0;
+            //console.log(args);
+
+            for(let i = 0; i<args.length;i++)
+            {
+                sum += args[i];
+            }
+            document.write(args+"<br>");
+            return sum;
+        }
+        document.write(addNum4(1,2,3,4,5,6,7,8,9,10));
+        
+
+    </script>
+</body>
+</html>

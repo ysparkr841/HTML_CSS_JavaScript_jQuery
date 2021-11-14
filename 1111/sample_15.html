@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+        div { border: 2px solid green; margin: 10px; }
+        #con2 { border: 2px solid orange; }
+        .con3 * {
+            display: block;
+            border: 1px solid lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(function(){
+            /*
+            $('button').on("click",function(){
+                $("p").parent().css("border","2px solid red");
+            });
+            */
+
+            $('button').on("click",function(){
+                $("p").parents("div").css("border","2px solid red");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="con3">
+        <div>
+            <div>div1
+                <ul>ul1
+                    <li>li 1</li>
+                    <li>li 2
+                        <p>p 1
+                            <span>span 1</span>
+                        </p>
+                    </li>
+                    <li>li 3</li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+
+    <button>부모 스타일 변경</button>
+</body>
+</html>

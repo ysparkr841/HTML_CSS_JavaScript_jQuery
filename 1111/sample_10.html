@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+        div { margin: 10px; }
+        .content { border: 4px solid red; }
+        .wrapper { border: 4px solid green; }
+     </style>
+    <script>
+        $(function(){
+            $("#btn1").on("click", function(){
+                $(".content").wrap("<div class='wrapper'></div>");
+            });
+
+            $("#btn2").on("click", function(){
+                $(".content").wrapAll("<div class='wrapper'></div>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="content">첫번째 컨텐츠</div>
+    <div class="content">두번째 컨텐츠</div>
+    <button id="btn1">추가</button>
+    <button id="btn2">추가</button>
+</body>
+</html>

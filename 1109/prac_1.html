@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                입력창: <input type="text" id="inputBox" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4">
+                결과창: <input type="text" id="displayBox" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <button type="button" onclick="reset()">clear</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('/')">/</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="button" onclick="add('7')">7</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('8')">8</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('9')">9</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('x')">x</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="button" onclick="add('4')">4</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('5')">5</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('6')">6</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('-')">-</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="button" onclick="add('1')">1</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('2')">2</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('3')">3</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('+')">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="button" onclick="add('0')">0</button>
+            </td>
+            <td>
+                <button type="button" onclick="deleteInput()">del</button>
+            </td>
+            <td>
+                <button type="button" onclick="add('.')">.</button>
+            </td>
+            <td>
+                <button type="button" onclick="calculateAll()">=</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function add(char)
+        {
+            document.getElementById("inputBox").value += char;
+        }
+
+        function calculateAll()
+        {
+            var inputNumber = document.getElementById("inputBox");
+            var result = eval(inputNumber.value);
+            document.getElementById("displayBox").value = result;
+            clearInputBox();
+        }
+
+        function reset()
+        {
+            clearInputBox();
+            document.getElementById("displayBox").value = "";
+        }
+
+        function clearInputBox()
+        {
+            document.getElementById("inputBox").value = "";
+        }
+
+        function deleteInput()
+        {
+            var inputNumber = document.getElementById("inputBox").value;
+            inputNumber = inputNumber.slice(0,-1);
+            document.getElementById("inputBox").value = inputNumber;
+        }
+    </script>
+</body>
+</html>

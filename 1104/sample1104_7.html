@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    <script>
+        var x = 3;
+        var y = 5;
+        var a = "abc";
+        var b = "bcd";
+
+        document.write((x>y)+"<br>"); //false
+        document.write((a <= b)+"<br>"); //abc가 순서가 앞이라서 트루?
+        document.write((x < a)+"<br>"); //false 얘는 비교대상이 없음.
+
+        var x2 = 3;
+        var y2 = "3";
+        var z2 = 3;
+        document.write((x2 == y2 )+"<br>");
+        document.write((x2 === y2 )+"<br>");
+        document.write((x2 === z2 )+"<br>");
+
+        //void는 어떤 타입의 값이 오든지 상관없이 언제나 undefined의 값만을 반환;
+    </script>
+
+    <br><br><br>
+    
+    <h1>instanceof 연산자</h1>
+    <script>
+        var str3 = new String("이것은 문자열 입니다.");
+
+        document.write((str3 instanceof Object)+"<br>");
+        document.write((str3 instanceof String)+"<br>");
+        document.write((str3 instanceof Array)+"<br>");
+        document.write((str3 instanceof Number)+"<br>");
+        document.write((str3 instanceof Boolean)+"<br>");
+
+
+    </script>
+
+    <br><br><br>
+    <a href="javascript:void(0)">이 링크는 동작하지 않습니다.</a>
+    <!--a태그는 항상 어떤 링크로 가는 동작을 하는데, void를 사용하며 아무것도 기능하지 않음.-->
+    <br>
+    <a href="javascript:void(document.body.style.backgroundColor = 'lightblue')">이 링크는 동작하지 않습니다. 다만, body 색상을 변경합니다.</a>
+
+    <br><br>
+    <script>
+        var a;
+        1 > 3? a =3 : a =4;
+        document.write(a); 
+    </script>
+
+    
+</body>
+</html>

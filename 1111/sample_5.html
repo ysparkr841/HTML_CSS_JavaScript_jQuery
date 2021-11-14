@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        //attr은 인자가 하나면 getter, 두개면 setter
+        $(function(){
+            var imgSrc = $("img").attr("src");
+            $("#txtPrint").html(imgSrc);
+
+            $("button").on("click",function(){
+                $("img").attr("src","../../img/22.jpg");
+                $("img").attr("style","width: 150px; height: 150px;");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>이미지 변경</h1>
+    <img src="../../img/11.jpg" alt="pix" style="width: 320px; height: 220px;">
+    <button>이미지 속성 변경</button>
+    <p id="txtPrint"></p>
+</body>
+</html>

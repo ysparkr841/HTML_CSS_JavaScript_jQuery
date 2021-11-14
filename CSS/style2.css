@@ -1,0 +1,11 @@
+table{
+    border: 1px doulbe cornflowerblue;
+    border-collapse: collapse;
+}
+th{background-color:cyan;
+font-weight: bold;
+}
+th,td{
+    border: 1px double cornflowerblue;
+    padding: 5px;
+}

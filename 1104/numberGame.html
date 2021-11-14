@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--computerNumber = 53
+    추측횟수 : nGuess
+    입력칸 숫자: id = user
+    추측횟수 id guesses
+    힌트 id result
+    확인버튼 선택 시,  guess()함수 호출
+    -->
+
+    <h1>숫자 맞추기 게임</h1>
+
+    <h6>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.</h6>
+
+    <div>
+        <b>숫자:</b>
+        <input type="text" id="user" value="">
+        <button type="button" onclick="guess()">확인</button>
+    </div>
+
+    <div>
+        <b>추측횟수:</b>
+        <input type="text" id="guesses">
+        <b>힌트: </b>
+        <input type="text" id="result">
+    </div>
+
+    <script>
+        var computerNumber = Math.floor(Math.random() * 100);
+        var nGuesses = 0;
+        function guess()
+        {
+            nGuesses++;
+            document.getElementById("guesses").value = nGuesses;
+            if(document.getElementById("user").value > computerNumber){
+                document.getElementById("result").value = "숫자가 큽니다.";
+            }else if(document.getElementById("user").value < computerNumber){
+                document.getElementById("result").value = "숫자가 작습니다.";
+            }else if(document.getElementById("user").value == computerNumber)
+            {
+                document.getElementById("result").value = "정답입니다.";
+            }
+        }
+    </script>
+</body>
+</html>

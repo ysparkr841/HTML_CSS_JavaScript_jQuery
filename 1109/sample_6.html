@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /*
+        Today is Tuesday<p>태그
+        눌러보세요 버튼->color: red, fontFamily = Century Schoolbook, fontStyle = italic
+        id를 이용해서
+        */
+    </script>
+    <style>
+        #div1 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function changeStyle()
+        {
+            var textCss = document.getElementById("text");
+            textCss.style.color = "red";
+            textCss.style.fontFamily = "Century Schoolbook";
+            textCss.style.fontStyle = "italic";
+        }
+    </script>
+
+    <p>
+        <h2 id="text">Today is Tuesday</h2>
+    </p>
+    <button type="button" onclick="changeStyle()">선택하세요</button>
+    <br><br><br><br>
+
+    <h3 id="heading">여기가 사라졌다 나타났다 합니다.</h3>
+    <input type="button" value="숨김" onclick="document.getElementById('heading').style.visibility = 'hidden'">
+    <input type="button" value="표시" onclick="reveal()">
+    <!--위처럼 onclick에 바로 함수 내부의 내용을 한줄이라면 넣을 수 있음-->
+    
+    <script>
+        function reveal()
+        {
+            document.getElementById("heading").style.visibility = "visible";
+        }
+    </script>
+    <br><br>
+
+    <br /><br />
+    <div id="div1">
+        1111111
+    </div>
+    <div id="div1" >
+        2222222
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById("div1").style.background = "yellow";
+        }, 500);
+
+        //name은 중복해도 되지만, id는 중복하면 안되는게 원래 원칙. 오류는 없지만.
+    </script>
+
+</body>
+</html>

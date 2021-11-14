@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원 가입 화면</h1>
+    <table>
+        <form action="./sample1102_3.html" method="get">
+        <tr>
+            <td>이름: </td> 
+            <td><input type="text" maxlength="10" size="30" placeholder="이름을 입력해주세요" autofocus></td>
+        </tr>
+
+        <tr>
+            <td>주소: </td>
+            <td><input type="text" size="30" placeholder="주소를 입력해주세요."></td>
+        </tr>
+
+        <tr>
+            <td>E-mail: </td>
+            <td>
+                <input type="email" size="30" placeholder="이메일을 입력해주세요." required>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <label><input type="radio" value="male" name="gender">남자</label>
+                <label><input type="radio" value="female" name="gender">여자</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="send">
+            </td> 
+            <td>
+                <input type="reset" value="reset">
+            </td>
+        </tr>
+        </form>
+    </table>
+</body>
+</html>

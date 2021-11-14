@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm">
+        필드1<input type="text" name="a0"><br/>
+        필드2<input type="text" name="a1"><br/>
+        필드3<input type="text" name="a2"><br/>
+        <button type="button" value="초기화" onclick="init();">확인</button>
+    </form>
+
+
+    <script>
+        function init()
+        {
+            for(var i=0;i<3;i++)
+            {
+                document.myForm["a"+i].value = i; //여기서 value는 텍스트박스임. 
+                //form형식의 태그 이름으로 바로 찾아갈 수 있음.
+                //이 때, 하위 name은 배열의 인덱스처럼 사용되는 것임.
+            }
+        }
+    </script>
+</body>
+</html>

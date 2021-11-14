@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <h1>문자열 타입</h1>
+    <br>
+    <br>
+    <p id="str"></p>
+    <script>
+        var firstStr = "이것도 문자열입니다.";
+        var secondStr = "이것도 문자열입니다.";
+        var thirdStr = "나의 이름은 '홍길동'입니다.";
+        var fourthStr = '나의 이름은 "홍길동"입니다.';
+
+        document.getElementById("str").innerHTML = firstStr +"<br>" + secondStr +"<br>"+thirdStr+"<br>"+fourthStr;
+    </script>
+
+    <br><br><br>
+    <h1>Boolean 형 타입</h1>
+
+    <p id="result"></p>
+
+    <script>
+        var firstNum = 10;
+        var secondNum = 11;
+
+        document.getElementById("result").innerHTML = (firstNum == secondNum);//같냐 아니냐를 ()로 물어본 값을 넣어줌. 즉, true or false;
+    </script>
+
+    <br/><br/><br/>
+
+
+    <h1>typeof 연산자</h1>
+    <p id="result2"></p>
+    <script>
+        document.getElementById("result2").innerHTML = (typeof 10) +"<br>";
+        document.getElementById("result2").innerHTML += (typeof "문자열")+"<br>";//여기서 그냥 =하면 결과가 바뀜.
+        document.getElementById("result2").innerHTML += (typeof true)+"<br/>";
+        document.getElementById("result2").innerHTML += (typeof undefined)+"<br/>";
+        document.getElementById("result2").innerHTML += (typeof null)+"<br/>"; //null을 object로 인식
+
+        var str2;
+        document.getElementById("result2").innerHTML += (typeof str2)+"<br>";
+        str2 = 10;
+        document.getElementById("result2").innerHTML += "str2 두번째 출력: "+(typeof str2)+"<br>";
+        str2 = "문자열";
+        document.getElementById("result2").innerHTML += "str2 세번째 출력: "+(typeof str2)+"<br>";
+
+    </script>
+
+    <br>
+    <br>
+
+    <h1>null과 undefined</h1>
+
+    <p id="result3"></p>
+
+    <script>
+        var num;
+        var str3 = null;
+        document.getElementById("result3").innerHTML = (typeof num);
+        document.getElementById("result3").innerHTML += "<br>"+(typeof str3)+"<br>"+ (typeof str4);
+
+    </script>
+</body>
+</html>

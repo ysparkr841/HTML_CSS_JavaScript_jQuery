@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",function(){
+                var num = prompt("숫자를 입력하세요");
+                $("#list").find("li").eq(num-1).html(num+"번째 리스트가 변경되었습니다.");
+            });
+        });
+        //eq는 해당하는 요소의 인덱스를 0부터 선택할 수 있음.
+        //eq가 -1이면 마지막요소임.
+    </script>
+</head>
+<body>
+    <h1>메서드 체이닝 연습</h1>
+    <ul id="list">
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+        <li>다섯번째</li>
+    </ul>
+    <button>선택</button>
+</body>
+</html>

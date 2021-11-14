@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array 메소드
+        //Array 객체에 정의된 배열과 관련된 작업을 할 때 사용하는 메소드
+        //Array.prototype 메소드
+        //.push()메소드:하나 이상의 요소를 배열의 가장 마지막에 추가
+        
+        var arr = [1,true,"JavaScript"];
+        document.write("arr.length : "+arr.length+"<br>"); //3
+        arr.push("자바스크립트"); //배열 끝에 추가
+        document.write("arr.length : "+arr.length+"<br>"); //4
+        document.write("arr : "+arr+"<br>"); 
+        arr.push(false, 4);
+        document.write("arr.length : "+arr.length+"<br>"); //6 
+        document.write("arr : "+arr+"<br>"); 
+        document.write("<br><br><br><br>"); 
+
+        //pop()메서드 : 배열의 가장 마지막 요소를 제거하고, 
+        //그 제거된 요소를 반환함.
+        //pop()메서드를 실행할 때마다 배열의 길이가 1씩 줄어듬.
+        document.write("arr.length : "+arr.length+"<br>"); 
+        document.write("arr.pop() : "+arr.pop()+"<br>");
+        document.write("arr.length : "+arr.length+"<br>");
+        document.write("arr : "+arr+"<br>"); 
+        //전에 delete는 배열의 공간은 남아있었음. 이건 공간 자체도 줄임
+        //shift() 배열의 마지막 요소가 아닌 첫 요소를 제거
+        //제거된 요소 반환함, 배열의 길이가 줄어듬.
+        document.write("arr.length : "+arr.length+"<br>");
+        document.write("arr.shift() : "+arr.shift()+"<br>");
+        document.write("arr.length : "+arr.length+"<br>");
+        document.write("arr : "+arr+"<br>");
+        //unshift(): 하나 이상의 요소를 배열의 가장 앞에 추가, 요소 수만큼 길이 추가
+        document.write("arr.shift() : "+arr.unshift(2,"거짓")+"<br>");
+        document.write("arr.length : "+arr.length+"<br>");
+        document.write("arr : "+arr+"<br>");
+
+        //pop()과 push()를 사용하면 배열을 스택이라는 데이터구조처럼 사용할 수 있음.
+        //last in first out - LIFO
+        //shift()와 unshift()를 사용하면 배열을 큐(queue)라는 데이터구조처럼 사용할 수 있음.
+        //last in last out - LILO
+        //들어오는 입구로 나갈 수 없음. 먼저 들어온 것이 먼저 빠짐.
+    </script>
+</body>
+</html>

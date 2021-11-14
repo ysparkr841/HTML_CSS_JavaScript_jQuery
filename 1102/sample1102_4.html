@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./CSS/style.css"/>
+    <title>Document</title>
+    <style>
+        #memo{color: red; font-size: 20px; font-style: italic; }
+        .org{color:orange; font-size: 30px;}
+        .intro{background-color:paleturquoise; border: 3px solid blue;}
+
+        .parent li a{color:darkgreen}
+        .parent li{background-color: dodgerblue;}
+        .parent li a:hover{color: darkseagreen;}
+
+        h1, #memo
+        {color: mediumspringgreen; font-size: 30;}
+
+    </style>
+</head>
+<h1>CSS</h1>
+<body>
+    <h1>안녕하세요</h1>
+    <div>
+        div영역입니다.
+        <span>
+            span영역입니다.
+            <div>
+                div 내의 div 영역입니다.
+            </div>
+        </span>
+    </div>
+
+    <div id="memo">
+        xishixishisishisi
+    </div>
+    <br>
+    <!--class 속성은 공백을 기준으로 여러개의 이름을 정의할 수 있음.-->
+    <div class="org"> 안녕하세요.
+    </div>
+
+        <p class="org intro">org intro 영역입니다</p>
+
+
+    <div class="parent">
+        부모 영역입니다.
+        <ul>
+            <li>홈</li>
+            <li><a href="https://www.icia.co.kr">인천일보 아카데미</a></li>
+            <li>고객센터</li>
+            <li>여기</li>
+        </ul>
+    </div>
+
+    <ul>
+        <li>홈</li>
+        <li><a href="https://www.icia.co.kr">인천일보 아카데미</a></li>
+        <li>고객센터</li>
+        <li>여기</li>
+    </ul>
+</body>
+</html>

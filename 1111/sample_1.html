@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",function(){
+                var nText = $("h1").html();//getter의 역할 ()안에 아무것도 없어서
+                $("#text").html(nText);//html메소드에 인수가 있으니 setter의 의미
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>html 메서드</h1>
+    <p>버튼을 선택하면 아래의 새로운 문구가 보입니다.</p>
+    <button>버튼</button>
+    <p id="text"></p>
+</body>
+</html>

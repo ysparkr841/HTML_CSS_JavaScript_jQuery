@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr =[3,4,5];
+
+        for(i=0;i<arr.length;i++)
+        {
+            document.write(i+" ");
+        }
+
+        document.write("<br>");
+        
+        for(var i in arr)
+        {
+            document.write(i+" ");
+        }
+        document.write("<br>");
+        document.write("<br>");
+
+        var myCar = {make: "BME", model: "X5", year: 2013};
+
+        var txt = "";
+
+        for(var i in myCar)
+        {
+            txt += myCar[i]+" ";
+        }
+        document.write(txt+"<br>");
+
+        //break
+
+        document.write("<br>");
+        document.write("<br>");
+
+        var msg ="";
+        for(var i = 0;i<10;i++)
+        {
+            if(i==3) continue;
+            msg += i+"<br>";
+        }
+        document.write(msg);
+        document.write("<br>");
+        document.write("<h1>label문</h1><br>");
+
+        gugudan:
+        for(var i = 2; i<10;i++)
+        {
+            dan:
+            for(var j=1;j<10;j++)
+            {
+                if((i*j) % 2 == 0) break dan;
+                document.write(i +"*"+j+" = "+(j*i)+"<br>");
+            }
+        }
+        document.write("for gugudan 끝");
+        //과정이 어떻게 흘러갈지 예측이 어려워 잘 쓰지 않는게 좋음.
+
+        document.write("<br>");
+        
+        var arrList = [1,true,"java script"]; 
+        var arrObj = Array(1,true,"Java Script");
+        var arrNewObj = new Array(1,true,"JaVa Script");
+        document.write(arrList+"<br>");
+        document.write(arrObj+"<br>");
+        document.write(arrNewObj+"<br>");
+
+        var arr =["javascript"]; //요소 하나뿐인 배열 생성
+        var element = arr[0];
+
+        arr[1] = 10;
+        arr[2] = element;//값만 똑같이 준 것임. 배열이 길이는 3이됨.
+
+        document.write("배열 arr의 요소에는 ["+arr+"]가 있습니다.<br>");
+        document.write("배열 arr의 길이는 "+arr.length+"입니다.<br>"); //배열 길이는 3
+
+        delete arr[2];//배열의 3번째 값을 삭제. 그러나 길이는 바뀌지 않음. ArrayList와 다름
+
+        document.write("배열 arr의 요소에는 ["+arr+"]가 있습니다.<br>");
+        document.write("배열 arr의 길이는 "+arr.length+"입니다."); //배열 길이는 3
+   
+        document.write("<br>");
+
+        /*
+        arr.push(); //푸시 메소드를 사용해 마지막에 넣기
+        arr[arr.length] = 추가할 요소;
+        arr[특정인덱스] = 추가할 요소;
+        */
+        arr.push("java");
+        arr.push("script");
+        document.write(arr+"<br>");
+
+        arr[arr.length] = 100;
+        document.write(arr+"<br>");
+        document.write(arr.length+"<br>");
+
+
+        arr[10] ="자바스크립트";
+        document.write(arr+"<br>");
+        document.write(arr[7]+"<br>");
+        document.write(arr.length+"<br>");
+
+    </script><br>
+    <br>
+
+    <script>
+        var arr2 = [1, true, "javascript"];
+        var result ="<table border='2'><tr>";
+        for(var i in arr2)
+        {
+            result += "<td>"+arr2[i]+"</td>";
+        }
+        result += "</tr></table>";
+
+        document.write(result);
+    </script>
+
+    <br><br>
+    <br>
+    <script>
+        //연관배열 인덱스가 이름으로 바뀜.
+        var arr3 = []; //비어있는 배열을 생성함.
+        arr3["하나"] = 1;
+        arr3["참"] = true;
+        arr3["자바스크립트"] = "Javascript";
+        document.write(arr["하나"]+"<br>");
+        //length가 없음. 연관배열이기 때문에, 그래서 0을 반환함.
+        document.write(arr3.length);
+        document.write(arr3[0]);//애초에 선언되지도 않아서 undefined
+
+    </script>
+
+    <br><br><br>
+
+    <script>
+        document.write("<h1>연관배열</h1>");
+
+        var fruits = new Array();
+        fruits['a'] = "사과";
+        fruits['b'] = "포도";
+        fruits['c'] = "오렌지";
+
+        document.write(fruits['a']+"<br>");
+        document.write(fruits['b']+"<br>");
+        document.write(fruits['c']+"<br>");
+
+        document.write("fruits.length: "+fruits.length+", fruits[0] : "+fruits[0]);
+
+        document.write("<br>");
+        document.write("<h1>문자열을 배열처럼 접근</h1>");
+
+        var str = "안녕하세요!";
+        document.write(str.charAt(2)+"<br>");
+        document.write(str[2]+"<br>");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm">
+        이름(6~8자 사이 문자): <input type="text" id="user"><br>
+        전화번호('-'없이 입력): <input type="text" id="phone">
+        <input type="button" onclick="checkNotEmpty(document.getElementById('user'), 6, 8);" value="확인">
+        
+
+    </form>
+
+    <script>
+        function checkNotEmpty(field, min, max)
+        {
+            var s = field.value;
+
+            if(s.length >= min && s.length <= max)
+            {
+                //return true;  //값이 입력되었음 //얘를 지금 주석처리 한 이유는 뒤를 체크하기 위함.
+            }else
+            {
+                alert("이름은 "+min+"글자에서 "+max+"글자 사이로 입력하셔야 합니다.");
+                field.focus();
+                return false;   //제출이 안되게 하기 위함.
+            }
+
+            var elem = document.getElementById("phone"); //매개변수 넘기는 효과
+            var exp = /^[0-9]+&/;
+            //match()는 일치하면 true로 반환
+            if(elem.value.match(exp))
+            {
+                return true;
+            }else{
+                alert("숫자만 입력하세요.");
+                elem.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

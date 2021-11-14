@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--총 14자리-->
+    <h1>성별</h1>
+    <table>
+        <tr>
+            <th>주민번호: </th>
+            <td>
+                <input type="text" id="jumin" maxlength="14" size="30" placeholder="'-'를 포함해서 주민번호 입력" required>
+            </td>
+            
+            <td>
+                <button type="button" onclick="checkGender();">확인</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        
+        function checkGender()
+        {
+            var gen = document.getElementById("jumin").value;
+            gen = gen.substring(7,8);
+            if(gen == 1 || gen == 3)
+            {
+                alert("남자입니다.");
+            }else if(gen == 2 || gen ==4 )
+            {
+                alert("여자입니다.");
+            }else
+            {
+                alert("성별 판별이 불가합니다.");
+            }
+        }
+    </script>
+
+    
+</body>
+</html>

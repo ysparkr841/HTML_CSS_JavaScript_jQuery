@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <script>
+        /*
+        제이쿼리에서는 선택한 요소들을 변수에 저장하여 사용가능
+        */
+        $(function(){
+            var items = $("li");
+            $("#btn2").on("click",function(){
+                $("#txt").text("li 태그의 총 갯수는 "+items.length+"개 입니다.");
+            });
+        });
+        
+        /*
+        선택 요소중에 필요한 요소만 선택할 수 잇음
+        */
+        // :has 선택자- 선택한 요소 중에서 지정한 선택자와 일치하는 자손 
+        //              요소를 갖는 요소 모두 선택함
+        $(function(){
+            $("#btn1").on("click", function(){
+                $("li:has(span)").css("backgroundColor","red");
+                $("li:has(span)").text("<span>태그가 포함된 li태그입니다.");
+                
+            });
+        });
+    </script>
+    <ul>
+        <li><span>1</span></li>
+        <li>2</li>
+        <li><span>3</span></li>
+        <li>4</li>
+    </ul><br>
+    <button id="btn1">버튼</button>
+    
+
+
+
+    <br><br><br><br>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h4 id="txt">내용</h4>
+    <button id="btn2">li 태그의 길이</button>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1" action="join.html" method="get">
+        <table align="center" bordercolor="#CCDDFF" cellspacing="0">
+            <tr>
+                <th bgcolor="#CCDDFF" colspan="2">회원 기본 정보</th>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">아이디:</th>
+                <td>
+                    <input name="my_id" type="text" size="15" maxlength="12">4~12자의 영문 대소문자와 숫자로만 입력
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">비밀번호:</th>
+                <td>
+                <input type="password" name="my_password" size="15" maxlength="12">4~12자의 영문 대소문자와 숫자로만 입력
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">비밀번호확인:</th>
+                <td>
+                    <input  name="my_password_confirm" type="password" size="15">
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">메일주소:</th>
+                <td>
+                    <input type="email" size="20" name="my_mail">예) id@domain.com
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">이름:</th>
+                <td>
+                    <input type="text" size="20" name="my_name">
+                </td>
+            </tr>
+
+            <tr>
+                <th colspan="2" bgcolor="#CCDDFF">개인 신상 정보</th>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">주민등록번호:</th>
+                <td>
+                    <input type="text" size="20" name="my_address">예)1234561234567
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">생일:</th>
+                <td>
+                    <input type="text" size="4" maxlength="4" name="my_year">년
+                    
+                    <select name="my_month">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>월
+
+                    <select name="my_day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        
+                    </select>일
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">관심분야:</th>
+                <td>
+                    <label><input type="checkbox" name="my_hobby" value="a">컴퓨터</label>
+                    <label><input type="checkbox" name="my_hobby" value="b">인터넷</label>
+                    <label><input type="checkbox" name="my_hobby" value="c">여행</label>
+                    <label><input type="checkbox" name="my_hobby" value="d">영화감상</label>
+                    <label><input type="checkbox" name="my_hobby" value="e">음악감상</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th bgcolor="#EEEEEE">자기소개:</th>
+                <td>
+                    <textarea style="resize: none;" name="my_intro" cols="50" rows="5"></textarea>
+                </td>
+            </tr>
+            
+        </table>
+        <br>
+        <div align="center">
+            <input type="submit" value="회원가입">
+            <input type="reset" value="다시 입력">
+        </div>
+    </form>
+</body>
+</html>

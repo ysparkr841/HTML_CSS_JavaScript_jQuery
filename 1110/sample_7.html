@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $(".jq").on("click",function(){
+                $(".jq").css("backgroundColor","lightgray");
+            });
+        });
+
+        $(function(){
+            $("button").on("click",function(){
+                $("img[alt='pic']").attr("src", "../../img/22.jpg");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class="jq">테두리를 배경색을 넣어주세요.</p>
+
+    <br><br>
+    <img src="../../img/11.jpg" alt="pic" width="400" height="400">
+    <button>이미지 바꾸기</button>
+</body>
+</html>

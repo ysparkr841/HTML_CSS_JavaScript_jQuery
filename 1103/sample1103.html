@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin:0; padding: 0;}
+        body{background-color: #F5F6F7;}
+        div{margin-top: 60px;margin-left: 38%;}
+        ul,li{ list-style: none;}
+        li{margin-bottom: 20px; text-align: left;}
+        .box{width: 450px; height: 50px; border: 1px solid #666; padding: 10px;}
+        .pbox{width: 120px; height: 50px; border: 1px solid #666; padding: 10px;}
+        .necessary{font-size: small; color:red;}
+        button{background:#00C850; color:white; width: 450px; border: 1px solid #666; height:50px; font-size: x-large; }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <span>아이디</span><br>
+                <input type="text" class="box" placeholder="아이디를 입력하세요."><br>
+                
+            </li>
+
+            <li>
+                <span>패스워드</span><br>
+                <input type="password" required class="box" placeholder="패스워드를 입력하세요.">
+                <br>
+                <span class="necessary">필수 정보입니다.</span>
+            </li>
+
+            <li>
+                <span>패스워드 확인</span><br>
+                <input type="password" class="box" required placeholder="다시 패스워드를 입력하세요."> <br>
+                <span class="necessary">필수 정보입니다.</span>
+            </li>
+
+            <li>
+                <span>생년월일</span><br>
+                <input type="date" required class="box"><br>
+                <span class="necessary">태어난 년도 4자리를 정확하게 입력하세요.</span>
+            </li>
+
+            <li>
+                <span>전화번호</span> 
+                <br>
+                <input type="number" class="pbox" required maxlength="4">-
+                <input type="number" class="pbox" required maxlength="4">-
+                <input type="number" class="pbox" required maxlength="4">
+
+            </li>
+
+            <li>
+                <span>성별</span><br>
+                <label><input type="radio" value="male" name="gender">남자</label>
+                <label><input type="radio" value="female" name="gender">여자</label>
+            </li>
+
+            <li>
+                <span>취미생활</span><br>
+                <label><input type="checkbox" name="hb" value="독서">독서</label>
+                <label><input type="checkbox" name="hb" value="산책">산책</label>
+                <label><input type="checkbox" name="hb" value="TV시청">TV시청</label>
+            </li>
+
+            <li>
+                <button>가입하기</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+           div { border: 2px solid green; margin: 10px; }
+           #con2 { border: 2px solid orange; }
+    </style>
+    <script>
+        $(function(){
+            //자식요소 삭제
+            $("#btn1").on("click", function(){
+                $("#divId").empty();
+            });
+
+            //부모요소 삭제
+            $("#btn2").on("click", function(){
+                $("span").unwrap();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="divId" style="background-color: darkred; border: 3px solid black; height: 200px;">
+        
+        <div style="background-color: darksalmon;">첫번째 div</div>
+        <div style="background-color: darkviolet;" class="content">두번째 div</div>
+        <div style="background-color: dimgrey;" class="content">세번째 div</div>
+    </div>
+    <button id="btn1">자식요소 삭제</button>
+    <br><br><br>
+
+    <div id="con2">
+        <div><span>1번째</span>입니다.</div>
+        <div><span>2번째</span>입니다.</div>
+        <div><span>3번째</span>입니다.</div>
+    </div>
+    <button id="btn2">부모요소 삭제</button>
+</body>
+</html>

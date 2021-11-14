@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click", function(){
+                var num = prompt("몇번째의 li를 바꾸고 싶으세요?");
+                $("li").eq(num-1).css({border : "3px solid red", backgroundColor: "lightblue"});
+                $("li").eq(num-1).html(num+"번째의 li 태그에 css를 적용했습니다.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>버튼</button>
+</body>
+</html>

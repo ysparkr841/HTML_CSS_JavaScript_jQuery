@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#firstBtn").on("click", function(){
+                $("#first").appendTo("#list");
+            });
+
+            $("#secondBtn").on("click", function(){
+                $("#second").appendTo("#list");
+            });
+
+            $("#thirdBtn").on("click", function(){
+                $("#third").appendTo("#list");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>appendTo 사용</h1>
+    <ul id="list">
+        <li id="first" style="color: crimson;">첫번째 항목 입니다.</li>
+        <li id="second" style="color: cyan;">두번째 항목 입니다.</li>
+        <li id="third" style="color: darkorange;">세번째 항목 입니다.</li>
+    </ul>
+    <button id="firstBtn">버튼1</button>
+    <button id="secondBtn">버튼2</button>
+    <button id="thirdBtn">버튼3</button>
+        
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").on("click",function(){
+                $("li").prepend("새로운 내용 추가 ");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>prepend() 사용</h1>
+    <ul>
+        <li>첫번째 항목 입니다.</li>
+        <li>두번째 항목 입니다.</li>
+        <li>세번째 항목 입니다.</li>
+    </ul>
+    <button id="btn1">prepend 적용</button>
+</body>
+</html>

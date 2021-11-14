@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("h1").on("click", function(){
+                $("h1").text("바뀌었을까요?");
+            });
+
+            $("p").on("click", function(){
+                $("span").css("border","3px solid red");
+                $("span").css("backgroundColor","gray");
+                $("span").css("fontSize","30px");
+            });
+
+            $("button").on("click", function(){
+                $("li:has(span)").text("span 영역입니다.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>여기 글씨를 바꿀거에요</h1>
+    <p>
+        <span>글자 크기를 바꿔볼까요</span>
+    </p>
+    <ul>
+        <li><span>1</span></li>
+        <li>2</li>
+        <li><span>3</span></li>
+        <li>4</li>
+    </ul>
+    <button>버튼</button>
+</body>
+</html>

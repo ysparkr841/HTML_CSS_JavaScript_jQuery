@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <style>
+        div{background-color: lightblue;}
+        .changeCss{background-color:rgb(17, 17, 99); color: white; font-size: 28px;}
+    </style>
+    <script>
+        $(function(){
+            $("#btn1").on("click", function(){
+                $("#first, #third").addClass("changeCss");
+            });
+            $("#btn2").on("click", function(){
+                $("#first, #third").removeClass("changeCss");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="first">1번째 div입니다.</div>
+    <div id="second">2번째 div입니다.</div>
+    <div id="third">3번째 div입니다.</div>
+
+    <button id="btn1">클래스 추가</button>
+    <button id="btn2">클래스 제거</button>
+
+</body>
+</html>

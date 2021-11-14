@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #newD{background-color: cadetblue; text-align: center; width: 400px;}
+    </style>
+</head>
+<body>
+    <h1>예제</h1>
+    <p id="change">바꿀 문장</p>
+
+    <br>
+    <button type="button" onclick="change()">바꾸기</button>
+    <br><br>
+    <button type="button" onclick="change2()">바꾸기</button>
+    
+    <p>
+        <div id="newC">
+        </div>
+    </p>
+
+    <script>
+        function change()
+        {
+            document.getElementById("change").innerHTML = "<p>======바뀐 문장======</p>";
+        }
+
+        function change2()
+        {
+            document.getElementById("newC").innerHTML = '<div id="newD">새로운 창</div>'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 10;
+        function localNum()
+        {
+            
+            document.write("함수 내부에서 변수 num의 타입은 "+ num+"입니다. <br>");
+            //var num = 20; //이미 선언된 변수는 무시됨.
+           // document.write("함수 내부에서 변수 num의 타입은 "+typeof num+"입니다. <br>");
+
+            num = 20;
+            //함수 내부에서 var없이 변수 선언을 하면 전역변수로 선언됨.
+        }
+
+        localNum();
+       // document.write("함수의 호출이 끝난 뒤 변수의 num 타입은 "+typeof num+"입니다. <br>");
+        document.write("함수의 호출이 끝난 뒤 변수의 num 타입은 "+ num+"입니다. <br>");
+        //함수 내에서 전역변수를 선언하려면 this.처럼 window.을 붙이며 됨.
+    </script>
+</body>
+</html>

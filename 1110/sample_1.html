@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    prompt() - 사용자에게 간단한 메시지를 보여주고, 
+    사용자가 입력한 문자열을 반환함
+    <p><h1 id="text">여기에 찍습니다.</h1></p>
+    <button onclick="promptDialog()">버튼</button>
+
+    <script>
+        function promptDialog()
+        {
+            var name = prompt("이름을 입력해주세요: ");
+            if(name != null)
+            {
+                document.getElementById("text").innerHTML = "당신의 이름은 "+name+"입니다.<br>";
+            }
+        }
+
+        //confirm은 확인 취소를 누르는 것!
+    </script>
+</body>
+</html>

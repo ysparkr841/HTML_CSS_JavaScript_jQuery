@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임 연습</title>
+</head>
+<body>
+    <h1>숫자 맞추기 게임</h1>
+    <h4>이 게임은 1~100까지의 랜덤한 숫자를 맞추는 게임입니다.</h4>
+    <table border="2">
+        <tr>
+            <th>입력란:</th>
+            <td colspan="3">
+                <input type="text" size="15" id="user" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <th>횟수:</th>
+            <td>
+                <input type="text" id="count" size="10" value="">
+            </td>
+            <th>힌트:</th>
+            <td>
+                <input type="text" id="hint" size="30" value="">
+                <button type="button" onclick="buttonClick();">확인</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var count = 0;
+        var com = parseInt(Math.floor(Math.random() * 100+1));
+        function buttonClick()
+        {
+            var user = document.getElementById("user").value;
+            var result = "";
+            if(user == "")
+            {
+                alert("숫자를 입력해주세요.");
+            }else
+            {
+                if(user == com)
+                {
+                    result = "정답입니다.";
+                }else if(user > com)
+                {
+                    result = "높은 숫자를 입력하셨습니다.";
+                    count++;
+                }else
+                {
+                    result = "낮은 숫자를 입력하셨습니다.";
+                    count++;
+                }
+                document.getElementById("count").value = count;
+                document.getElementById("hint").value = result;
+            }
+        }
+    </script>
+</body>
+</html>

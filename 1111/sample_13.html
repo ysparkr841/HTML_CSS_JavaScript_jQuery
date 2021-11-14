@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var dt;
+            //remove()와 차이점.
+            //detach()는 데이터가 날라가지 않음
+            $("#dBtn").on("click", function(){
+                dt = $(".content").detach();
+            });
+
+            $("#rBtn").on("click", function(){
+                $("#divId").append(dt);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="divId" style="background-color: darkred;">
+        <div style="background-color: darksalmon;">첫번째 div</div>
+        <div style="background-color: darkviolet;" class="content">두번째 div</div>
+        <div style="background-color: dimgrey;" class="content">세번째 div</div>
+    </div>
+    <br>
+    <button id="dBtn">삭제</button>
+    <button id="rBtn">복구</button>
+
+</body>
+</html>

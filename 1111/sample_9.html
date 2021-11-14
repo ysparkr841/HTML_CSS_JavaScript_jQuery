@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        //외부의 요소 추가하는 것
+        $(function(){
+            $("#btn1").on("click", function(){
+                $("#firstId").before("<tr><td>새로운 열 1 추가</td><td>새로운 열 2 추가</td></tr>");
+            });
+
+            $("#btn2").on("click", function(){
+                $("#firstId").after("<tr><td>새로운 열 1 추가</td><td>새로운 열 2 추가</td></tr>");
+            });
+
+            $("#btn3").on("click", function(){
+                $("<td>새로운 열 추가</td>").insertBefore("#secondCol");
+            });
+
+            $("#btn4").on("click",function(){
+                $("<td>새로운 열 추가</td>").insertAfter("#secondCol");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table border="2" style="width: 400px;">
+        <tr id="firstId">
+            <td>first-first</td>
+            <td id="secondColumn">first-second</td>
+        </tr>
+    </table>
+    <br>
+    <button id="btn1">앞에 행 추가</button>
+    <button id="btn2">뒤에에 행 추가</button>
+
+    <br><br><br>
+
+    <table border="2">
+        <tr>
+            <td id="firstCol">첫번째 열1</td>
+            <td id="secondCol">두번째 열2</td>
+
+        </tr>
+    </table>
+    <button id="btn3">버튼3</button>
+    <button id="btn4">버튼3</button>
+
+</body>
+</html>

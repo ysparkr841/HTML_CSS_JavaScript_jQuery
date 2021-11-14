@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function process()
+        {
+            //var obj = document.getElementById("target");
+            var obj = document.myForm.text1; //name을 통해 들어가는 것.
+
+            alert(obj.value);
+        }
+
+        function chkList()
+        {
+            var selectedItem = document.getElementsByTagName("li");
+
+            for(var i = 0 ; i<selectedItem.length; i++)
+            {
+                selectedItem.item(i).style.color = "red";
+            }
+        }
+
+        var YorN = 0; // 전역변수로 안 넣으면 올때마다 0으로 되는거라서 함수 밖에 빼줘야 함.
+        function changeImg()
+        {
+            if(YorN == 0)
+            {
+                document.getElementById("img").src = "../../img/22.jpg";
+                YorN = 1;
+            }else
+            {
+                document.getElementById("img").src = "../../img/11.jpg";
+                YorN = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm">
+        <input type="text" id="target" name="text1">
+        <input type="submit" value="제출" onclick="process()">
+    </form>
+    <br><br><br>
+
+    <ul>
+        <li>List1</li>
+        <li>List2</li>
+        <li>List3</li>
+        <li>List4</li>
+        <li>List5</li>
+    </ul>
+    <br>
+    <button type="button" name="btn1" onclick="chkList()">선택하세요.</button>
+
+    
+
+    <br>
+    <h1>이미지 변경</h1>
+    <img src="../../img/11.jpg" alt="image" id="img" width="400" height="400">
+    <input type="button" onclick="changeImg()" value="선택하세요">
+
+</body>
+</html>

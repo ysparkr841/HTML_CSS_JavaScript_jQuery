@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <script>
+        //정규표현식
+        //특정한 규칙을 가지는 문자열의 집합을 찾아내기 위함 검색 패턴
+        //문법 /검색패턴/플래그
+        //search() 정규표현식에 맞는 첫번째 위치를 반환하는 메서드.
+        var text = document.getElementById("text");
+        var targetStr = "ab1bc2cd3de";
+        var reg1 = /\d/;        //0~9
+        var reg2 = /[3-9]/;     //3~9
+        text.innerHTML = targetStr.search(reg1);
+        alert(targetStr.search(reg1));
+        alert(targetStr.search(reg2));
+        text.innerHTML += targetStr.search(reg2);
+        //test()메소드 인수로 전달된 문자열에 특정 패턴과 일치하는 문자열이 있는지 검색, true false리턴
+    </script>
+</body>
+</html>

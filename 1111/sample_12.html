@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").on("click", function(){
+                $("#firstId").replaceAll(".item");
+                //class가 item인것을 전부 변경
+            });
+
+            $("#btn2").on("click", function(){
+                $(".item").replaceWith($("#firstId"));
+            });
+
+            $("#btn3").on("click", function(){
+                $(".item2").remove(".firstId, .secondId");
+            });
+            //삭제된 요소와 연관된 제이쿼리 데이터나 이벤트도 전부 삭제
+
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>replaceAll() 메소드 사용</h1>
+    <ul>
+        <li class="item" id="firstId">첫번째 입니다. 1</li>
+        <li class="item" id="secondId">두번째 입니다. 2</li>
+        <li class="item" id="thirdId">세번째 입니다. 3</li>
+    </ul>
+    <button id="btn1">항목 대체</button>
+    <button id="btn2">항목 대체2</button>
+
+    <br><br><br>
+    <ul>
+        <li class="item2 firstId">첫번째 입니다. 1</li>
+        <li class="item2 secondId">두번째 입니다. 2</li>
+        <li class="item2 thirdId">세번째 입니다. 3</li>
+    </ul>
+    <button id="btn3">항목 삭제</button>
+
+</body>
+</html>

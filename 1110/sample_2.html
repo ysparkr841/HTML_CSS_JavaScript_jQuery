@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        function func()
+        {
+            addArributed();
+            createElement();
+        }
+
+        function addArributed()
+        {
+            document.getElementById("para").setAttribute("style", "color:red");
+        }
+
+        function createElement()
+        {
+            var crNode =document.getElementById("para");
+            var newNode = document.createElement("p");
+            //<p>태그가 만들어 지는 것
+            newNode.innerHTML = "새로운 단락입니다.";
+            //p태그 안에 내용이 들어감.
+            newNode.setAttribute("id", "para");
+            //<p id="para">새로운 단락 추가</p>의 상태가 됨.
+            document.body.insertBefore(newNode, crNode);
+            //바디태그에 newNode를 crNode앞에 넣으란 것.
+        }
+
+        //처음 빨간색 변화는 내용이 없어서 보이지 않음.
+        //새로운 p영역이 생성. 내용이 추가됨.
+        //그 다음 색상이 변경됨.
+        //다음에 추가 됨. 이 때, 만들어질 때는 빨간색이 안됨
+    </script>
+</head>
+<body>
+    <!--CDN방법 사이트를 참조하는 것. 인터넷이 안되면 실행불가.-->
+    <!--
+        jQuery 문법
+        &(선택자).동작함수();
+        달러 기호는 제이쿼리를 의미하고, 제이쿼리에 접근할 수 있게 하는 식별자
+        선택자를 이용하여 원하는 html 요소를 선택하고 동작함수를 정의하여 선택된
+        요소에 원하는 동작을 설정
+        &()함수: 선택된 html요소를 제이쿼리에서 이용할 수 있는 형태로
+                생성해주는 역할을 함. 인수로는 html 태그이름, css 선택자를 전달
+                하여 특정 html요소를 선택할 수 있음. 선택자에다가
+        
+        이러한 &()함수를 통해 생성된 요소를 제이쿼리 객체라고 하며, 생성된
+        제이쿼리 객체의 메서드를 사용하여 여러 동작을 설정할 수 있음
+
+        document 객체의 ready() 메소드
+        자바스크립트 코드는 웹 브라우저가 문서의 모든 요소를 로드 한 뒤에
+        실행되어야 합니다. 보통은 별다른 문제가 발생하지 않지만, 다음과 같은
+        경우에는 오류가 발생
+        -아직 생성되지 않은 html요소에 속성을 추가하려는 경우
+        -아직 로드되지 않은 이미지의 크기를 얻으려고 하는 경우
+        정의되고 나서 바뀌어야 하는 것들은 ready메소드에 정의하면 안됨.
+        이미지의 경우 타 사이트에서 가져오는 경우 이미지를 가져오지 않아서
+        크기를 얻으려고 한다면 ready메소드에서 사용하면 안됨.
+
+    -->
+
+    <h1>아직 생성되지 않은 HTML 요소에 속성 추가</h1>
+    <button onclick="func()">속성추가</button>
+    <p id="para"></p>
+</body>
+</html>

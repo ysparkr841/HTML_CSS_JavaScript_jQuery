@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        아이디     : 6~20자의 영문 대소문자, 숫자와 특수기호(_),(-)
+        비밀번호 : 6~20자 영문 대 소문자, 숫자, 특수문자
+        이름        : 한글과 영문 대 소문자를 사용하세요. 
+                        (특수기호, 공백 사용 불가) – 최소3글자 이상
+        주소        : 2글자 이상
+        생일        : date 타입
+        이메일    : 메일주소 정규표현식
+        핸드폰번호 : 정규표현식
+        */
+    </script>
+</head>
+<body>
+<h3>회원가입</h3>
+    <form name="form1" method="post">
+      
+        아이디(6~20문자):
+        <input type="text" id="userId" maxlength="20" name="userId"><br>
+        비밀번호:
+        <input type="password" maxlength="20" id="pwd1" name="pwd1"><br>
+        비밀번호 확인:
+        <input type="password" maxlength="20" id="pwd2" name="pwd2"><br>
+        이름:
+        <input type="text" id="name" name="name" maxlength="20"><br>
+        주소:
+        <input type="text" id="addr" name="addr" maxlength="20"><br>
+        생일:
+        <input type="date" id="birthday" name="birthday"><br>
+        이메일:
+        <input type="text" id="email" name="email"><br>
+        휴대폰:
+        <input type="text" id="phone" name="phone"><br>
+        <br>
+        <input type="button" value="확인" onclick="return validate();">
+        <input type="reset" value="다시입력"><br>
+        <input type="hidden" name="pwd" value=""><!--얘는 비밀번호와 비밀번호 확인이 맞았을 때, 서버로 암호화해서 보내기 위해 사용하는 용도-->
+    </form>
+
+    <script>
+        //이메일 체크 정규표현식
+        function isEmail(asValue)
+        {
+            var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            //여기 regExp는 지역변수 regExp의 객체가 아님.
+            //정규식은 찾아보면 나옴
+
+            return regExp.test(asValue);//asValue를 테스트 메소드로 앞의 regExp에 해당하는지 여부를 판단.
+        }
+
+        //핸드폰 체크 정규표현식
+        function isCell(asValue)
+        {
+            var regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+            return regExp.test(asValue);
+        }
+        
+        function validate()
+        {
+            //아이디 패턴 6~20자의 영문 대소문자, 숫자와 특수기호(_),(-)
+            var idPattern = /^[a-zA-Z0-9_-]{6,20}$/;
+            //비밀번호 패턴 6~20자 영문 대 소문자, 숫자, 특수문자
+            var pwPattern = /[a-zA-Z0-9!@#$%^&*()_+|<>?:{}]{6,20}/; // 여기는 절대 공백을 넣으면 안됨.
+            //이름 패턴 한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가) – 최소3글자 이상: 얘는 length로 할거임
+            var namePattern = /^[a-zA-Z가-힣]*$/;
+            //날짜 패턴
+            var datePattern2 = /^(19|20)\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])$/;
+
+            //아이디 체크
+            if(document.form1.userId.value.trim() == "")
+            {
+                alert("아이디를 입력하세요");
+                document.form1.userId.focus();
+                return false;
+            }
+            if(!idPattern.test(document.form1.userId.value))
+            {
+                alert("아이디는 6~20자의 영문 대소문자와 숫자, 특수기호('_','-')로만 입력해야 합니다.");
+                document.form1.userId.value = ""; 
+                document.form1.userId.focus();
+                return false;
+            }
+            
+
+            //비밀번호 체크
+            if(document.form1.pwd1.value.trim() == "")
+            {
+                alert("비밀번호를 입력해주세요.");
+                document.form1.pwd1.focus();
+                return false;
+            }
+            if(document.form1.pwd2.value.trim() == "")
+            {
+                alert("비밀번호 확인을 입력해주세요.");
+                document.form1.pwd2.focus();
+                return false;
+            }
+            if(!pwPattern.test(document.form1.pwd1.value))
+            {
+                alert("비밀번호는 6~20자의 영문 대소문자, 숫자, 특수문자로만 입력해야 합니다.");
+                document.form1.pwd1.value = "";
+                document.form1.pwd1.focus();
+                return false;
+            }
+            if(document.form1.pwd1.value != document.form1.pwd2.value)
+            {
+                alert("비밀번호가 일치하지 않습니다.");
+                document.form1.pwd2.value = "";
+                document.form1.pwd2.focus();
+                return false;
+            }
+
+            //이름 체크
+            if(document.form1.name.value.trim() == "")
+            {
+                alert("이름을 입력해주세요");
+                document.form1.name.focus();
+                return false;
+            }
+            if(!namePattern.test(document.form1.name.value))
+            {
+                alert("이름은 한글과 영문 대소문자를 사용하세요.")
+                document.form1.name.value = "";
+                document.form1.name.focus();
+                return false;
+            }
+            if(document.form1.name.value.length < 3)
+            {
+                alert("이름은 3글자 이상 입력해주세요.");
+                document.form1.name.value = "";
+                document.form1.name.focus();
+                return false;
+            }
+            //주소 체크
+            if(document.form1.addr.value.trim() == "" 
+                || document.form1.addr.value.trim().length <2)
+            {
+                alert("주소를 입력해주세요.");
+                document.form1.addr.value = "";
+                document.form1.addr.focus();
+                return false;
+            }
+
+            //생년월일 체크
+            if(document.form1.birthday.value.trim() == "")
+            {
+                alert("생일을 선택해주세요.");
+                document.form1.birthday.focus();
+                return false;
+            }
+            if(!datePattern2.test(document.form1.birthday.value))
+            {
+                alert("생일을 정확하게 선택해주세요.");
+                document.form1.birthday.value = "";
+                document.form1.birthday.focus();
+                return false;
+            }
+            
+            //이메일 체크
+            if(document.form1.email.value.trim() == "" ||
+            document.form1.email.value.trim().length < 5)
+            {
+                alert("이메일을 입력해주세요.");
+                document.form1.email.focus();
+                return false;
+            }
+
+            if(!isEmail(document.form1.email.value))
+            {
+                alert("이메일을 올바르게 입력해주세요.");
+                document.form1.email.value = "";
+                document.form1.email.focus();
+                return false;
+            }
+
+            //핸드폰 번호 체크
+            if(document.form1.phone.value.trim() == "" ||
+            document.form1.phone.value.trim().length < 6)
+            {
+                alert("전화번호를 입력해주세요.");
+                document.form1.phone.focus();
+                return false;
+            }
+            if(!isCell(document.form1.phone.value))
+            {
+                alert("전화번호를 올바르게 입력해주세요.");
+                document.form1.phone.value = "";
+                document.form1.phone.focus();
+                return false;
+            }
+
+            if(confirm("회원가입을 하시겠습니까?"))
+            {
+                document.form1.action = "sample_9.html";
+                document.form1.submit();
+            }else
+            {
+                alert("회원가입이 취소되었습니다.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            //filter와 반대의 기능 not()
+            $("#fBtn").on("click", function(){
+                //odd는 홀수-인덱스가 홀수인 거임. 0,1,2면 1만
+                $("li").not(":odd").css("border", "3px solid green");
+            });
+
+            $("#lBtn").on("click", function(){
+                //even은 짝수- 역시 인덱스가 짝수인 것, 0도 짝수에 포함
+                $("li").not(":even").css("border", "3px solid red");
+            });
+
+            $("#eqBtn").on("click", function(){
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>li 1</li>
+        <li>li 2</li>
+        <li>li 3</li>
+        <li>li 4</li>
+        <li>li 5</li>
+        <li>li 6</li>
+        <li>li 7</li>
+        <li>li 8</li>
+
+    </ul>
+    <button id="fBtn">버튼F</button>
+    <button id="lBtn">버튼L</button>
+    <button id="eqBtn">eq버튼</button>
+
+</body>
+</html>

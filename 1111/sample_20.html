@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .lined { 
+      text-decoration: line-through;
+      color: lightgray;
+            }
+    </style>
+    <script src="../javascript/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#addBtn").on("click", function(){
+                $("#first, #third").addClass("lined");
+            });
+
+            $("#removeBtn").on("click", function(){
+                $("#first, #third").removeClass("lined");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="first">첫번째 입니다.</p>
+    <p id="second">추가되지 않는 클래스</p>
+    <p id="third">세번째 입니다.</p>
+    <button id="addBtn">클래스 추가</button>
+    <button id="removeBtn">클래스 제거</button>
+
+</body>
+</html>

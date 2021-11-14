@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //String 메소드
+        //String 인스턴스에서 특정 문자나 문자열이 처음으로
+        //등장하는 위치나 마지막으로 등장하는 위치를 반환
+        //.indexOf(); .lastIndexOf();
+        //찾을 수 없을 때는 -1반환;
+
+        var str = "abcDEFabc";
+        
+        document.write(str.indexOf('abc')+"<br>"); //0
+        document.write(str.indexOf("abcd")+"<br>");    //-1
+        document.write(str.indexOf("abc",3)+"<br>"); //인덱스 3부터 찾기 시작, 6
+        document.write(str.lastIndexOf("abc")+"<br>"); //6
+        document.write(str.lastIndexOf("d")+"<br>");   //-1
+        document.write(str.lastIndexOf("c")+"<br>");   //8
+    </script>
+
+    <script>
+        //charAt(); String 인스턴스에서 전달받은 인덱스에
+        //위치한 문자나 문자 코드 반환
+        //charCodeAt();
+        document.write("<br><br><br><br>");
+        var str2 = "abcDEFabc";
+
+        document.write(str2.charAt(0)+"<br>"); //a
+        document.write(str2.charAt(10)); 
+        //빈문자열이 전달받은 인덱스 길이보다 클 경우 빈문자열 반환
+        document.write(str2.charCodeAt(0)); //a에 해당하는 유니코드 반환
+
+        /*
+        String 인스턴스에서 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의
+        문자열만큼 추출하여 만든 새로운 문자열을 반환함
+        */
+        document.write("<br><br><br><br>");
+
+        document.write(str.slice(2,6)+"<br>"); //인덱스2번부터 인덱스 5까지 문자열을 출력
+        document.write(str.slice(-4,-2)+"<br>"); //음수로 전달된 인덱스는 문자열의 뒤에서부터 시작함
+        //맨 뒤가 -1부터 시작.
+        document.write(str.slice(2)+"<br>");
+        //인덱스 인수로 종료 인덱스가 전달되지 않으면 문자열의 마지막까지 추출
+        document.write(str.substring(2,6)+"<br>");
+        //cDEF 2부터 5까지를 가져옴 substring은 다 인덱스
+        document.write(str.substr(2,4)+"<br>");
+        //cDEF substr은 앞에는 인덱스고, 뒤에는 몇글자?
+        //2번째 인덱스부터 4글자란 뜻
+
+        //cDEFabc 찍어보기
+        document.write("찍어보기 "+str.slice(2,9)+"<br>");
+        document.write("찍어보기2 "+str.slice(2)+"<br>");
+        //끝까지 갖고오는 거니까 뒤에 숫자는 안찍어도 됨.
+
+        document.write("substring : 'cDEF' 찍어보기"+str.substring(2,6)+"<br>");
+        document.write("substr : 'cDEF' 찍어보기"+str.substr(2,4)+"<br>");
+
+        
+
+        document.write("<br><br><br><br>");
+
+        //문자열 주위의 공백제거
+        //String 인스턴스의 양 끝에 존재하는 모든 공백과
+        //줄바꿈 문자를 제거한 새로운 문자열 반환
+        //trim();
+        var str3 = "    Java Script  ";
+        document.write("str3.trim() : ["+str3.trim()+"] <br>");
+        
+
+        document.write("<br><br><br><br>");
+        //String 문자열 분리
+        //String 인스턴스를 구분자를 기준으로 나눈 후, 나눈 
+        //문자열을 하나의 배열로 반환
+        //.split();
+        //split()메소드는 인수로 구분자를 전달하지 않으면,
+        //전체 문자열을 하나의 배열 요소로 가지는 길이가 1인
+        //배열을 반환
+
+        var stri = "자바스크립트는 너무 멋져요! 그리고 유용해요.";
+        document.write("stri.split() : "+stri.split()+"<br>");
+        //구분자를 명시하지 않으면 아무런 동작도 하지 않음
+        document.write("stri.split(\"\") : "+stri.split("")+"<br>");
+        // 한 문자("")씩 나눔.
+        document.write("stri.split(\" \") : "+stri.split(" ")+"<br>");
+        //띄어쓰기를 기준으로 나눔/
+        document.write("stri.split(\"!\") : "+stri.split("!")+"<br>");
+        //느낌표를 기준으로 나눔
+        //느낌표를 기준으로 나눈 것이기 때문에, !는 어디에도 포함 x        
+
+        document.write("<br><br><br><br>");
+
+        //문자열의 대소문자 변환
+        //.toUpperCase() toLowerCase()
+
+        var stri2 ="JavaScript";
+        document.write("stri2.toUpperCase() : "+stri2.toUpperCase()+"<br>");
+        document.write("stri2.toUpperCase() : "+stri2.toLowerCase()+"<br>");
+
+    </script>
+</body>
+</html>
